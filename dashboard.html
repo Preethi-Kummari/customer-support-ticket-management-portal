@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+         <div class="sidebar">
+            <h3 class="logo"> 🎫 Ticket Portal </h3>
+            <ul>
+                <li>
+                    <a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard </a>
+                </li>
+                <li>
+                    <a href="tickets.html"> <i class="fas fa-ticket-alt"></i> Tickets </a>
+                </li>
+                <li>
+                    <a href="create-ticket.html"> <i class="fas fa-plus-circle"></i> Create Ticket </a>
+                </li>
+                <li>
+                    <a href="settings.html"> <i class="fas fa-cog"></i> Settings </a>
+                </li>
+                <li>
+                    <a href="index.html" onclick="localStorage.removeItem('isLoggedIn')"> <i class="fas fa-sign-out-alt"></i> Logout </a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="main-content">
+            <div class="topbar">
+                <h2>Dashboard</h2>
+                <button id="themeToggle" class="btn btn-dark"> 🌙 Dark Mode </button>
+            </div>
+            
+            <!-- Dashboard Cards -->
+             
+            <div class="row g-4 mb-4">
+                <div class="col-md-3">
+                    <div class="dashboard-card">
+                        <h5>Total Tickets</h5>
+                        <h2 id="totalTickets">0</h2>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="dashboard-card">
+                        <h5>Open Tickets</h5>
+                        <h2 id="openTickets"> 0 </h2>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="dashboard-card">
+                        <h5>In Progress</h5>
+                        <h2 id="progressTickets"> 0 </h2>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="dashboard-card">
+                        <h5>Closed Tickets</h5>
+                        <h2 id="closedTickets"> 0 </h2>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Chart + Activity -->
+             
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="recent-section">
+                        <h4> Ticket Analytics </h4>
+                        <canvas id="ticketChart"></canvas>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="recent-section">
+                        <h4> Recent Activity </h4>
+                        <ul class="list-group" id="activityList"> </ul>
+                    </div>
+                </div>
+            </div>
+            <br>
+            
+            <!-- Recent Tickets -->
+             
+            <div class="recent-section">
+                <div class="d-flex justify-content-between">
+                    <h4> Recent Tickets </h4>
+                    <select id="sortTickets" class="form-select w-25">
+                        <option value="latest"> Latest </option>
+                        <option value="oldest"> Oldest </option>
+                        <option value="customer"> Customer Name </option>
+                    </select>
+                </div>
+                
+                <table class="table table-hover mt-3">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Customer</th>
+                            <th>Subject</th>
+                            <th>Priority</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recentTickets"> </tbody>
+                </table>
+            </div>
+            
+            <footer class="text-center mt-4">
+                <hr> <p> © 2026 Customer Support Portal </p>
+            </footer>
+        
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/api.js"></script>
+
+<script src="js/dashboard.js"></script>
+
+<script src="js/theme.js"></script>
+
+</body>
+
+</html>
