@@ -1,0 +1,412 @@
+/* GLOBAL STYLES */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#f4f6f9;
+}
+
+/* LOGIN PAGE */
+
+.login-page{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#1e3c72,#2a5298);
+}
+
+.login-card{
+    width:420px;
+    background:#fff;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.25);
+}
+
+.login-icon{
+    font-size:60px;
+    color:#2563eb;
+    margin-bottom:15px;
+}
+
+.login-card h2{
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.login-card .form-control{
+    height:50px;
+    border-radius:10px;
+}
+
+.login-card .btn{
+    height:50px;
+    border-radius:10px;
+    font-size:17px;
+    font-weight:600;
+}
+
+/* LAYOUT */
+
+.wrapper{
+    display:flex;
+    min-height:100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    width:280px;
+    background:#16213e;
+    color:white;
+    padding:25px;
+}
+
+.logo{
+    text-align:center;
+    font-size:2rem;
+    font-weight:700;
+    margin-bottom:40px;
+}
+
+.sidebar ul{
+    list-style:none;
+    padding:0;
+}
+
+.sidebar li{
+    margin-bottom:15px;
+}
+
+.sidebar a{
+    color:white;
+    text-decoration:none;
+    display:block;
+    padding:12px 15px;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.sidebar a:hover{
+    background:#2563eb;
+}
+
+.sidebar i{
+    margin-right:10px;
+}
+
+/* MAIN CONTENT */
+
+.main-content{
+    flex:1;
+    padding:30px;
+}
+
+/* TOPBAR */
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.topbar h2{
+    font-size:2.5rem;
+    font-weight:600;
+}
+
+/* BUTTONS */
+
+.btn{
+    border-radius:10px;
+}
+
+.btn-primary{
+    padding:12px 20px;
+}
+
+.btn-success{
+    padding:12px 20px;
+}
+
+.btn-secondary{
+    padding:12px 20px;
+}
+
+/* DASHBOARD CARDS */
+
+.dashboard-card{
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
+    color:white;
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+    min-height:150px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+
+.dashboard-card:hover{
+    transform:translateY(-5px);
+}
+
+/* CARD SECTIONS */
+
+.recent-section,
+.ticket-form-card,
+.ticket-details-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.ticket-form-card{
+    max-width:950px;
+    margin:auto;
+}
+
+.ticket-details-card{
+    max-width:900px;
+    margin:auto;
+}
+
+/* FORM ELEMENTS */
+
+.form-control,
+.form-select{
+    height:55px;
+    border-radius:12px;
+}
+
+textarea.form-control{
+    min-height:180px;
+    resize:none;
+}
+
+.form-control:focus,
+.form-select:focus{
+    border-color:#2563eb;
+    box-shadow:none;
+}
+
+.form-label,
+label{
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+/* ERRORS */
+
+.error{
+    color:red;
+    font-size:14px;
+}
+
+#charCount{
+    color:#6b7280;
+    font-size:14px;
+}
+
+/* TABLES */
+
+.table td{
+    vertical-align:middle;
+}
+
+.action-btn{
+    margin-right:5px;
+}
+
+/* PAGINATION */
+
+.pagination-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    margin-top:20px;
+}
+
+/* PRIORITY BADGES */
+
+.priority-high{
+    background:#ef4444;
+    color:white;
+    padding:5px 12px;
+    border-radius:20px;
+}
+
+.priority-medium{
+    background:#f59e0b;
+    color:white;
+    padding:5px 12px;
+    border-radius:20px;
+}
+
+.priority-low{
+    background:#22c55e;
+    color:white;
+    padding:5px 12px;
+    border-radius:20px;
+}
+
+/* CHART */
+
+#ticketChart{
+    max-height:300px;
+}
+
+
+/* DARK MODE */
+
+.dark-mode{
+    background:#121212;
+    color:#ffffff;
+}
+
+.dark-mode .main-content{
+    background:#121212;
+    color:#ffffff;
+}
+
+.dark-mode .recent-section,
+.dark-mode .ticket-form-card{
+    background:#1e1e1e;
+    color:#ffffff;
+}
+
+.dark-mode .table{
+    color:#ffffff !important;
+}
+
+.dark-mode .table td,
+.dark-mode .table th{
+    color:#ffffff !important;
+    background:#1e1e1e !important;
+    border-color:#444 !important;
+}
+
+.dark-mode .form-control,
+.dark-mode .form-select{
+    background:#2d2d2d;
+    color:#ffffff;
+    border:1px solid #555;
+}
+
+.dark-mode .form-control::placeholder{
+    color:#cccccc;
+}
+
+.dark-mode .pagination-container{
+    color:#ffffff;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6,
+.dark-mode p,
+.dark-mode label{
+    color:#ffffff;
+}
+
+/* DARK MODE - Ticket Details */
+
+.dark-mode .ticket-details-card {
+    background: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode .ticket-details-card p,
+.dark-mode .ticket-details-card strong,
+.dark-mode .ticket-details-card h5,
+.dark-mode .ticket-details-card h4,
+.dark-mode .ticket-details-card h3,
+.dark-mode .ticket-details-card span {
+    color: #ffffff !important;
+}
+
+.dark-mode .ticket-details-card hr {
+    border-color: #555;
+}
+
+.dark-mode .ticket-details-card .card {
+    background: #2b2b2b !important;
+    color: #ffffff !important;
+    border: 1px solid #555;
+}
+
+.dark-mode #ticketDetails {
+    color: #ffffff !important;
+}
+
+.dark-mode #ticketDetails p,
+.dark-mode #ticketDetails strong {
+    color: #ffffff !important;
+}
+
+.dark-mode #ticketDetails .card {
+    background: #2b2b2b !important;
+    color: #ffffff !important;
+}
+
+#spinner{
+
+    display:none;
+
+    padding:20px;
+
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    color:#666;
+    margin-top:20px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .wrapper{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+    }
+
+    .topbar{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+
+    .topbar h2{
+        font-size:2rem;
+    }
+
+    .ticket-form-card{
+        width:100%;
+        padding:20px;
+    }
+
+    .login-card{
+        width:90%;
+    }
+}
